@@ -7,7 +7,6 @@ public enum GameState { MainMenu, GamePlay, Finish, Revive, Setting }
 public class GameManager : Singleton<GameManager>
 {
     private GameState gameState;
-    public CameraFollower cameraFollow;
     public void ChangeState(GameState gameState)
     {
         this.gameState = gameState;

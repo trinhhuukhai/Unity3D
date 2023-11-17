@@ -8,13 +8,11 @@ public class CameraFollower : Singleton<CameraFollower>
     [SerializeField] Transform player;
     [SerializeField] Vector3 intialOffset;
     [SerializeField] Vector3 offset;
-
-    [SerializeField] Vector3 zoomInOffset;
     public Vector3 Offset { get => offset; set => offset = value; }
 
 
-    private void Start()
-    {
+    private void Awake()
+    {   
         GetInstance();
     }
     void Update()
@@ -26,16 +24,9 @@ public class CameraFollower : Singleton<CameraFollower>
     {
         player = target;
     }
-    public void ResetOffset()
+    public void Play()
     {
         offset = intialOffset;
     }
-    public void ZoomOut()
-    {
-        offset = intialOffset;
-    }
-    public void ZoomIn()
-    {
-        offset = zoomInOffset;
-    }
+
 }

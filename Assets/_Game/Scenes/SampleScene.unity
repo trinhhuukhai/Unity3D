@@ -843,9 +843,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 357017334}
-  intialOffset: {x: 0, y: 15, z: -10}
-  offset: {x: 0, y: 15, z: -22}
-  zoomInOffset: {x: 0, y: 10, z: -9}
+  intialOffset: {x: 0, y: 5, z: -4}
+  offset: {x: 0, y: 13, z: -10}
 --- !u!1 &993894601
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +889,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e945bc9f1d529409fa4b50240c9a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraFollow: {fileID: 0}
 --- !u!1 &1145628200
 GameObject:
   m_ObjectHideFlags: 0

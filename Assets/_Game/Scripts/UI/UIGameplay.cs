@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UIGameplay : UICanvas
 {
     public Text AliveTxt;
-
+    
     public override void Setup()
     {
         base.Setup();

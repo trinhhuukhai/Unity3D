@@ -117,7 +117,6 @@ public class Player : Character
     protected override void SetSize(float size)
     {
         base.SetSize(size);
-        CameraFollower.Ins.ZoomIn();
     }
 
     internal void OnRevive()
