@@ -30,4 +30,21 @@ using UnityEngine;
             }
         }
 
+    public static T GetInstance()
+    {
+        if (m_Ins == null)
+        {
+            m_Ins = GameObject.FindObjectOfType<T>();
+            if (m_Ins == null)
+            {
+                GameObject gameObject = new GameObject();
+
+                m_Ins = gameObject.AddComponent<T>();
+            }
+            DontDestroyOnLoad(m_Ins.gameObject);
+        }
+        return m_Ins;
+
     }
+
+}

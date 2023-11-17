@@ -4,69 +4,38 @@ using UnityEngine;
 
 public class CameraFollower : Singleton<CameraFollower>
 {
-    public enum State { MainMenu, Gameplay, Shop}
 
-    [SerializeField] Transform tf;
-
-  
-    [SerializeField] Vector3 playerRotate;
-    [SerializeField] Vector3 gamePlayRotate;
-
- 
-    [SerializeField] Vector3 playerOffset;
+    [SerializeField] Transform player;
+    [SerializeField] Vector3 intialOffset;
     [SerializeField] Vector3 offset;
-    [SerializeField] Vector3 offsetMax;
-    [SerializeField] Vector3 offsetMin;
 
-    [SerializeField] Transform[] offsets;
+    [SerializeField] Vector3 zoomInOffset;
+    public Vector3 Offset { get => offset; set => offset = value; }
 
-    [SerializeField] float moveSpeed = 5f;
-    Transform target;
 
-    private Vector3 targetOffset;
-    private Quaternion targetRotate;
-
-    public Camera Camera;
-
-    private void Awake()
+    private void Start()
     {
-        target = FindObjectOfType<Player>().transform;
-        Camera = Camera.main;
+        GetInstance();
     }
-
-    private void LateUpdate()
+    void Update()
     {
-        offset = Vector3.Lerp(offset, targetOffset, Time.deltaTime * moveSpeed);
-        tf.rotation = Quaternion.Lerp(tf.rotation, targetRotate, Time.deltaTime * moveSpeed);
-        tf.position = Vector3.Lerp(tf.position, target.position + targetOffset, Time.deltaTime * moveSpeed);
+        if (player != null)
+            transform.position = Vector3.Lerp(transform.position, player.position + offset, 0.5f);
     }
-
-    //rate
-    public void SetRateOffset(float rate)
+    public void SetTargetFollow(Transform target)
     {
-        targetOffset = Vector3.Lerp(offsetMin, offsetMax, rate);
+        player = target;
     }
-
-    public void ChangeState(State state)
+    public void ResetOffset()
     {
-        targetOffset = offsets[(int)state].localPosition;
-        targetRotate = offsets[(int)state].localRotation;
-        return;
-
-        switch (state)
-        {
-            case State.MainMenu:
-                targetOffset = playerOffset;
-                targetRotate = Quaternion.Euler(playerRotate);
-                break;
-
-            case State.Gameplay:
-                targetOffset = offsetMin;
-                targetRotate = Quaternion.Euler(gamePlayRotate);
-                break;
-
-            default:
-                break;
-        }
+        offset = intialOffset;
+    }
+    public void ZoomOut()
+    {
+        offset = intialOffset;
+    }
+    public void ZoomIn()
+    {
+        offset = zoomInOffset;
     }
 }

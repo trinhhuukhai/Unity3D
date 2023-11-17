@@ -61,9 +61,7 @@ public class Player : Character
     public override void OnInit()
     {
         OnTakeClothsData();
-
         base.OnInit();
-
         TF.rotation = Quaternion.Euler(Vector3.up * 180);
         SetSize(MIN_SIZE);
     }
@@ -119,7 +117,7 @@ public class Player : Character
     protected override void SetSize(float size)
     {
         base.SetSize(size);
-        CameraFollower.Ins.SetRateOffset((this.size - MIN_SIZE) / (MAX_SIZE - MIN_SIZE));
+        CameraFollower.Ins.ZoomIn();
     }
 
     internal void OnRevive()
@@ -168,7 +166,6 @@ public class Player : Character
 
     }
 
-    //take cloth from data
     internal void OnTakeClothsData()
     {
         // take old cloth data

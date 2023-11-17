@@ -7,13 +7,10 @@ public class UIMainMenu : UICanvas
 {
     [SerializeField] private Text coinText;
 
-    //[SerializeField] Animation anim;
-
     public override void Open()
     {
         base.Open();
         GameManager.Ins.ChangeState(GameState.MainMenu);
-        CameraFollower.Ins.ChangeState(CameraFollower.State.MainMenu);
         coinText.text = UserData.Ins.coin.ToString();
  
     }
@@ -35,7 +32,6 @@ public class UIMainMenu : UICanvas
     {
         LevelManager.Ins.OnPlay();
         UIManager.Ins.OpenUI<UIGameplay>();
-        CameraFollower.Ins.ChangeState(CameraFollower.State.Gameplay);
         Close(0.4f);
     }
 }

@@ -36,7 +36,6 @@ public class Character : BaseCharacter, IHit
     {
         IsDead = false;
         score = 0;
-
         WearClothes();
         ClearTarget();
 

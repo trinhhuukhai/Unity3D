@@ -17,7 +17,6 @@ public class UIShop : UICanvas
 
     [SerializeField] ButtonState buttonState;
     [SerializeField] Text coinTxt;
-    [SerializeField] Text adsTxt;
 
     MiniPool<ShopItem> miniPool = new MiniPool<ShopItem>();
 
@@ -42,8 +41,6 @@ public class UIShop : UICanvas
     {
         base.Open();
         SelectBar(shopBars[0]);
-        CameraFollower.Ins.ChangeState(CameraFollower.State.Shop);
-
         playerCoinTxt.text = UserData.Ins.coin.ToString();
     }
 
@@ -140,9 +137,7 @@ public class UIShop : UICanvas
         currentItem.SetState(ShopItem.State.Selecting);
 
         //check data
-        coinTxt.text = item.data.cost.ToString();
-        adsTxt.text = item.data.ads.ToString();
-    }
+        coinTxt.text = item.data.cost.ToString();    }
 
     public void BuyButton()
     {
@@ -151,10 +146,6 @@ public class UIShop : UICanvas
         SelectItem(currentItem);
     }
 
-    public void AdsButton()
-    {
-
-    }
 
     public void EquipButton()
     {

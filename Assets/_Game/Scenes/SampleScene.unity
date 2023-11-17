@@ -279,7 +279,7 @@ MonoBehaviour:
   mask: {fileID: 1959442700}
   currentSkin: {fileID: 0}
   rb: {fileID: 357017336}
-  moveSpeed: 4
+  moveSpeed: 5
 --- !u!54 &357017336
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -842,19 +842,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2bac2751961c244991f3f975001dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tf: {fileID: 963194228}
-  playerRotate: {x: 20, y: 0, z: 0}
-  gamePlayRotate: {x: 60, y: 0, z: 0}
-  playerOffset: {x: 0, y: 1.8, z: -5.5}
-  offset: {x: 0, y: 16, z: -10}
-  offsetMax: {x: 0, y: 45, z: -27}
-  offsetMin: {x: 0, y: 16, z: -10}
-  offsets:
-  - {fileID: 2140429350}
-  - {fileID: 1923129221}
-  - {fileID: 1898723273}
-  moveSpeed: 10
-  Camera: {fileID: 963194227}
+  player: {fileID: 357017334}
+  intialOffset: {x: 0, y: 15, z: -10}
+  offset: {x: 0, y: 15, z: -22}
+  zoomInOffset: {x: 0, y: 10, z: -9}
 --- !u!1 &993894601
 GameObject:
   m_ObjectHideFlags: 0
@@ -899,6 +890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08e945bc9f1d529409fa4b50240c9a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraFollow: {fileID: 0}
 --- !u!1 &1145628200
 GameObject:
   m_ObjectHideFlags: 0
