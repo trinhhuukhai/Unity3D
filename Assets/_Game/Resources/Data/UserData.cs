@@ -39,10 +39,6 @@ public class UserData : ScriptableObject
 
     public const string Key_Level = "Level";
     public const string Key_Coin = "Coin";
-    public const string Key_SoundIsOn = "SoundIsOn";
-    public const string Key_Vibrate = "VibrateIsOn";
-    public const string Key_RemoveAds = "RemoveAds";
-    public const string Key_Tutorial = "Tutorial";
 
     public const string Key_Player_Weapon = "PlayerWeapon";
     public const string Key_Player_Hat = "PlayerHat";
@@ -60,10 +56,6 @@ public class UserData : ScriptableObject
     public int level = 0;
     public int coin = 0;
 
-    public bool soundIsOn = true;
-    public bool vibrate = true;
-    public bool removeAds = false;
-    public bool tutorialed = false;
 
     public WeaponType playerWeapon;
     public HatType playerHat;
@@ -169,10 +161,6 @@ public class UserData : ScriptableObject
         level = PlayerPrefs.GetInt(Key_Level, 0);
         coin = PlayerPrefs.GetInt(Key_Coin, 0);
 
-        removeAds = PlayerPrefs.GetInt(Key_RemoveAds, 0) == 1;
-        tutorialed =  PlayerPrefs.GetInt(Key_Tutorial, 0) == 1;
-        soundIsOn =  PlayerPrefs.GetInt(Key_SoundIsOn, 0) == 1;
-        vibrate =  PlayerPrefs.GetInt(Key_Vibrate, 0) == 1;
 
         playerWeapon = GetEnumData(Key_Player_Weapon, WeaponType.W_Hammer_1);
         playerHat = GetEnumData(Key_Player_Hat, HatType.HAT_Arrow);

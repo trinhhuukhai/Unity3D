@@ -188,8 +188,6 @@ public enum PoolType
     ACC_Captain,
     ACC_Headphone,
     ACC_Shield,
-
-    TargetIndicator,
 }
 
 

@@ -12,6 +12,7 @@ public class UIMainMenu : UICanvas
         base.Open();
         GameManager.Ins.ChangeState(GameState.MainMenu);
         coinText.text = UserData.Ins.coin.ToString();
+
  
     }
 

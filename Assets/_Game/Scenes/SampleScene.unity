@@ -492,7 +492,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bg: {fileID: 1722943533}
   flyCoinContain: {fileID: 1722943532}
-  flyCoinPrefab: {fileID: 495426280749663467, guid: 9b5d7e4123d512545b9fdec1cd9e3f96, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 357017334}
-  intialOffset: {x: 0, y: 5, z: -4}
+  intialOffset: {x: 0, y: 13, z: -10}
   offset: {x: 0, y: 13, z: -10}
 --- !u!1 &993894601
 GameObject:

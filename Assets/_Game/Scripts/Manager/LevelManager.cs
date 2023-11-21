@@ -130,10 +130,14 @@ public class LevelManager : Singleton<LevelManager>
                 if (bots.Count == 0)
                 {
                     Victory();
+
+                    UserData.Ins.SetIntData(UserData.Key_Level, ref UserData.Ins.level, UserData.Ins.level + player.Score * 10);
                 }
             }
 
         }
+
+        UserData.Ins.SetIntData(UserData.Key_Coin, ref UserData.Ins.coin, UserData.Ins.level + player.Score * 10);
 
         UIManager.Ins.GetUI<UIGameplay>().UpdateTotalCharacter();
     }
@@ -142,6 +146,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         UIManager.Ins.CloseAll();
         UIManager.Ins.OpenUI<UIVictory>().SetCoin(player.Coin);
+
         player.ChangeAnim(Constant.ANIM_WIN);
     }
 

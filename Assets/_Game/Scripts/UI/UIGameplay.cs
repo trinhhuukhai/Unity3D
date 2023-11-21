@@ -33,4 +33,6 @@ public class UIGameplay : UICanvas
     {
         AliveTxt.text = LevelManager.Ins.TotalCharater.ToString();
     }
+
+ 
 }

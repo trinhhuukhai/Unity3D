@@ -11,10 +11,10 @@ public class CameraFollower : Singleton<CameraFollower>
     public Vector3 Offset { get => offset; set => offset = value; }
 
 
-    private void Awake()
-    {   
-        GetInstance();
-    }
+    //private void Awake()
+    //{   
+    //    GetInstance();
+    //}
     void Update()
     {
         if (player != null)

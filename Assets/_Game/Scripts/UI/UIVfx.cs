@@ -9,13 +9,10 @@ public class UIVfx : Singleton<UIVfx>
     [SerializeField] Image bg;
     private Vector3 RandomDirect => Vector3.right * (Random.value - 0.5f) * 200 + Vector3.up * (Random.value - 0.5f) * 200;
 
-    private MiniPool<FlyCoin> flyCoinPool = new MiniPool<FlyCoin>();
     [SerializeField] Transform flyCoinContain;
-    [SerializeField] FlyCoin flyCoinPrefab;
 
     private void Awake()
     {
-        flyCoinPool.OnInit(flyCoinPrefab, 9, flyCoinContain);
     }
 
     public void AddCoin(int amount, int coin, Vector3 startPoint, Vector3 finishPoint)
@@ -25,7 +22,6 @@ public class UIVfx : Singleton<UIVfx>
         for (int i = 0; i < amount; i++)
         {
             coinUnit = i == amount - 1 ? coinUnit + coin % amount : coinUnit;
-            flyCoinPool.Spawn().OnInit(startPoint + RandomDirect, finishPoint, null);
         }
 
         StartCoroutine(IEFade(1.5f, new Color(0, 0, 0, 150f / 255f), Color.clear));
